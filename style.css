@@ -33,21 +33,34 @@ body{
     box-shadow: 0 0 1rem rgba(0,0,0,0.4);
     font-size:8vmin;
     color:#6d6875;
-    background-color:#e5989b ;
+    background-color:#b5838d ;
 }
 
 #reset-btn {
     padding:1rem;
     font-size: 1.25rem;
-    background-color: #b5838d;
+    background-color: #e5989b;
     color:#fff;
     border-radius:1rem;
     border:none;
 }
 
+#new-btn{
+    padding:1rem;
+    font-size: 1.25rem;
+    background-color: #e5989b;
+    color:#fff;
+    border-radius:1rem;
+    border:none; 
+    position: absolute;
+    top: 80%;
+}
+
 #msg {
     color:#9b0606;
-    font-size: 5vmin;
+    font-size: 7vmin;
+    position: absolute;
+    top: 65%;
 }
 
 .msg-container {
@@ -61,4 +74,21 @@ body{
 
 .hide{
     display:none;
+}
+
+.gif-container {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.gif-container.hide {
+    display: none;
+}
+
+.gif-container img {
+    width: 400px; /* Adjust size as needed */
+    height: auto;
 }

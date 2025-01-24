@@ -3,6 +3,8 @@ let resetBtn = document.querySelector("#reset-btn");
 let newGameBtn = document.querySelector("#new-btn");
 let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
+const gifContainer = document.querySelector(".gif-container");
+const winnerGif = document.querySelector("#winner-gif");
 
 let turnO = true; //playerX, playerO
 let count = 0; //To Track Draw
@@ -23,6 +25,8 @@ const resetGame = () => {
   count = 0;
   enableBoxes();
   msgContainer.classList.add("hide");
+  gifContainer.classList.add("hide");
+    winnerGif.src = "GIF.gif"; 
 };
 
 boxes.forEach((box) => {
@@ -30,10 +34,12 @@ boxes.forEach((box) => {
     if (turnO) {
       //playerO
       box.innerText = "O";
+      box.style.color = "blue"; // Set color for O
       turnO = false;
     } else {
       //playerX
       box.innerText = "X";
+      box.style.color = "red"; // Set color for O
       turnO = true;
     }
     box.disabled = true;
@@ -68,6 +74,14 @@ const enableBoxes = () => {
 
 const showWinner = (winner) => {
   msg.innerText = `Congratulations, Winner is ${winner}`;
+  // Show GIF or Sticker
+  if (winner === "O") {
+    winnerGif.src = "GIF.gif"; // Add path to O winner GIF
+} else {
+    winnerGif.src = "GIF.gif"; // Add path to X winner GIF
+}
+
+  gifContainer.classList.remove("hide");
   msgContainer.classList.remove("hide");
   disableBoxes();
 };
